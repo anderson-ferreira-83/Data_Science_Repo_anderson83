@@ -1,75 +1,75 @@
-# Projeto de Análise de Dados do Censo
+# Census Data Analysis Project
 
-Este projeto utiliza dados do censo para explorar técnicas de análise de dados e modelos de aprendizado supervisionado. Ele aplica diferentes algoritmos de classificação para prever a classe de renda de indivíduos com base em suas características demográficas e socioeconômicas.
+This project uses census data to explore data analysis techniques and supervised learning models. It applies different classification algorithms to predict individuals' income class based on their demographic and socioeconomic characteristics.
 
-## Fonte dos Dados
+## Data Source
 
-O conjunto de dados foi obtido do [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). Este dataset é amplamente utilizado para estudos de classificação binária, como prever se a renda de um indivíduo é superior a 50K por ano.
+The dataset was obtained from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). This dataset is widely used for binary classification studies, such as predicting whether an individual's income is over 50K per year.
 
-## Estrutura do Projeto
+## Project Structure
 
-- **dados_do_censo_anderson83.py**: Script principal com a análise dos dados e aplicação de modelos de machine learning.
-- **adult.data**: Arquivo de dados do censo usado para treinar e avaliar os modelos.
+- **dados_do_censo_anderson83.py**: Main script with data analysis and application of machine learning models.
+- **adult.data**: Census data file used to train and evaluate the models.
 
-## Pré-requisitos
+## Prerequisites
 
-O projeto foi desenvolvido no Google Colab, mas pode ser executado em qualquer ambiente Python com as seguintes bibliotecas instaladas:
+The project was developed on Google Colab but can be run in any Python environment with the following libraries installed:
 
 - `pandas`
 - `seaborn`
 - `matplotlib`
 - `scikit-learn`
 
-Para instalar as dependências, utilize:
+To install the dependencies, use:
 ```bash
 pip install pandas seaborn matplotlib scikit-learn
 ```
-## Execução
 
-Para rodar o projeto, siga os passos:
+## Execution
 
-1. Conecte-se ao Google Drive, caso use o Colab, para acessar o arquivo de dados (`adult.data`).
-2. Defina o caminho para o diretório onde o arquivo de dados está salvo.
-3. Execute cada célula para carregar, pré-processar, e visualizar os dados.
-4. Teste os modelos de classificação disponíveis no script, como Regressão Logística, Árvore de Decisão, K-Nearest Neighbors, entre outros.
+To run the project, follow these steps:
 
-## Descrição do Conjunto de Dados
+1. Connect to Google Drive, if using Colab, to access the data file (`adult.data`).
+2. Define the path to the directory where the data file is saved.
+3. Run each cell to load, preprocess, and visualize the data.
+4. Test the classification models available in the script, such as Logistic Regression, Decision Tree, K-Nearest Neighbors, among others.
 
-O conjunto de dados possui as seguintes colunas:
+## Dataset Description
 
-- **age**: Idade do indivíduo.
-- **workclass**: Categoria de trabalho (ex.: servidor público, autônomo, etc).
-- **education**: Nível de escolaridade.
-- **education-num**: Código do nível de escolaridade.
-- **marital-status**: Estado civil.
-- **occupation**: Ocupação.
-- **relationship**: Relação familiar (ex.: esposa, marido, etc).
-- **race**: Raça.
-- **sex**: Gênero.
-- **capital-gain**: Ganho de capital.
-- **capital-loss**: Perda de capital.
-- **hours-per-week**: Horas trabalhadas por semana.
-- **native-country**: País de origem.
+The dataset has the following columns:
 
-O objetivo é prever a variável de **renda** (acima ou abaixo de 50K por ano) com base nessas características.
+- **age**: Age of the individual.
+- **workclass**: Employment category (e.g., government, self-employed, etc.).
+- **education**: Education level.
+- **education-num**: Education level code.
+- **marital-status**: Marital status.
+- **occupation**: Occupation.
+- **relationship**: Family relationship (e.g., wife, husband, etc.).
+- **race**: Race.
+- **sex**: Gender.
+- **capital-gain**: Capital gain.
+- **capital-loss**: Capital loss.
+- **hours-per-week**: Hours worked per week.
+- **native-country**: Country of origin.
 
-## Modelos de Machine Learning
+The goal is to predict the **income** variable (above or below 50K per year) based on these characteristics.
 
-O projeto inclui a aplicação de diversos algoritmos de classificação, incluindo:
+## Machine Learning Models
 
-- Regressão Logística
-- Árvore de Decisão
+The project includes the application of various classification algorithms, including:
+
+- Logistic Regression
+- Decision Tree
 - K-Nearest Neighbors
 - Random Forest
 - Naive Bayes
 
-Esses modelos são treinados e avaliados para verificar qual oferece o melhor desempenho em termos de precisão e outras métricas de avaliação.
+These models are trained and evaluated to determine which offers the best performance in terms of accuracy and other evaluation metrics.
 
-## Métricas de Avaliação
+## Evaluation Metrics
 
-As principais métricas utilizadas para avaliação dos modelos são:
+The main metrics used to evaluate the models are:
 
-- **Acurácia**
-- **Matriz de Confusão**
-- **Relatório de Classificação** (contendo precisão, recall e f1-score)
+- **Accuracy**
+- **Confusion Matrix**
 
