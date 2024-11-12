@@ -1,88 +1,83 @@
-# 1° Challenge de Dados -  Alura
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+# First Data Challenge - Alura
+
+![Badge in Development](http://img.shields.io/static/v1?label=STATUS&message=IN%20DEVELOPMENT&color=GREEN&style=for-the-badge)
 
 <center>
   <img src="https://i.imgur.com/jn7km8o.png">
 </center>
 
-A Alura Voz é uma empresa de telecomunicação que nos contratou para atuar como cientistas de dados na equipe de vendas. Logo na primeira semana, a liderança nos informa que é muito necessário realizar um estudo quanto ao Churn da empresa. É explicado que o churn indica se um cliente cancelou ou não o contrato com a empresa, e também que, nos casos de perda do cliente a empresa também perde faturamento, o que ocasiona prejuizos na receita final.
+Alura Voz is a telecommunications company that hired us as data scientists on the sales team. In the first week, leadership informed us of the need to conduct a study on the company's churn. They explained that churn indicates whether a customer canceled or not their contract with the company, and that customer loss impacts revenue negatively.
 
-Desse modo, nossa liderança informa que temos 4 semanas para buscar uma alternativa que possa minimizar a saída de clientes e nos entrega um conjunto de dados da Alura Voz que contém diversas informações sobre os clientes e também informa se eles deixaram ou não a empresa.
+Thus, we were informed that we have four weeks to seek an alternative to minimize customer loss and were provided a dataset containing various customer information, as well as indicating if they left the company.
 
-Sabemos que, antes de pensar em qualquer alternaiva, é preciso entender as informações que recebemos e, após uma pequena reunião, concluímos que na primeira semana nós nos dedicaríamos a entender o banco de dados, descobrir os tipos de dados, verificar a existencia de valores incoerentos e corrigi-los caso seja necessário.
+We know that, before considering any alternative solutions, it’s essential to understand the provided information. After a brief meeting, we concluded that we would dedicate the first week to understanding the database, identifying data types, checking for incoherent values, and correcting them if necessary.
 
-## Semana 1 - Limpeza dos dados
+## Week 1 - Data Cleaning
 
-### Dados
+### Data
 
-Ao observar a [Base de dados da Alura Voz](https://github.com/sthemonica/alura-voz/blob/main/Dados/Telco-Customer-Churn.json), verificamos que essa é uma base disponibilizada via API em formato JSON com várias camandas de dados.
+Upon reviewing the [Alura Voz Database](https://github.com/sthemonica/alura-voz/blob/main/Dados/Telco-Customer-Churn.json), we found that the data is provided via an API in JSON format with multiple layers.
 
-Junnto a esses dados também foi disponibilizado o [dicionário dos dados](https://github.com/sthemonica/alura-voz/blob/main/dicionario.md) que nele contém todas as informações sobre as colunas do banco de dados.
+Along with the data, we were also provided the [data dictionary](https://github.com/sthemonica/alura-voz/blob/main/dicionario.md), which contains information on all database columns.
 
-Nela, além da informação se o cliente deixou ou não a empresa, também contém:
+In addition to whether a customer left the company, it also includes:
 
-<b>Cliente:</b>
+<b>Customer:</b>
  
-* `gender`: gênero (masculino e feminino)
-* `SeniorCitizen`: informação sobre um cliente ter ou não idade igual ou maior que 65 anos
-* `Partner`: se o cliente possui ou não um parceiro ou parceira
-* `Dependents`: se o cliente possui ou não dependentes
+* `gender`: gender (male and female)
+* `SeniorCitizen`: indicates if the customer is aged 65 or older
+* `Partner`: if the customer has a partner or not
+* `Dependents`: if the customer has dependents or not
 
-<b>Serviço de telefonia</b>
+<b>Telephone Service</b>
 
+* `tenure`: months of customer’s contract
+* `PhoneService`: subscription to telephone service
+* `MultipleLines`: subscription to multiple phone lines
 
- * `tenure`: meses de contrato do cliente
- * `PhoneService`: assinatura de serviço telefônico
- * `MultipleLines`: assisnatura de mais de uma linha de telefone
- 
+<b>Internet Service</b>
 
-<b>Serviço de internet</b>
+* `InternetService`: subscription to an internet provider
+* `OnlineSecurity`: additional online security subscription
+* `OnlineBackup`: additional online backup subscription
+* `DeviceProtection`: additional device protection subscription
+* `TechSupport`: additional technical support subscription with reduced wait time
+* `StreamingTV`: cable TV subscription
+* `StreamingMovies`: movie streaming subscription
 
+<b>Contract</b>
 
- * `InternetService`: assinatura de um provedor internet
- * `OnlineSecurity`: assinatura adicional de segurança online
- * `OnlineBackup`: assinatura adicional de backup online
- * `DeviceProtection`: assinatura adicional de proteção no dispositivo
- * `TechSupport`: assinatura adicional de suporte técnico, menos tempo de espera
- * `StreamingTV`: assinatura de TV a cabo
- * `StreamingMovies`: assinatura de streaming de filmes
+* `Contract`: type of contract
+* `PaperlessBilling`: if the customer prefers online billing
+* `PaymentMethod`: payment method
+* `Charges.Monthly`: total monthly charge for all services
+* `Charges.Total`: total amount spent by the customer
 
+Having this information allows us to understand our data and proceed to a more technical analysis, where we’ll understand the JSON structure, inspect the data, and clean it as needed.
 
-<b>Contrato</b>
+All developments from our first week can be found in the [week 1 notebook](https://github.com/sthemonica/alura-voz/blob/main/1-Limpeza%20dos%20dados/limpeza.ipynb).
 
+## Week 2 - Data Analysis
 
- * `Contract`: tipo de contrato
- * `PaperlessBilling`: se o cliente prefere receber online a fatura
- * `PaymentMethod`: forma de pagamento
- * `Charges.Monthly`: total de todos os serviços do cliente por mês
- * `Charges.Total`: total gasto pelo cliente
+After recognizing and cleaning the data, we continued our work by analyzing it. Through discussion with the group, we concluded that a graphical analysis is necessary to understand which variables are related to churn so the sales team can get an overview of the current situation and so that we can develop hypotheses about the customer’s behavior.
 
-Tendo essas informações entendemos nossos dados e, assim, podemos realizar uma análise mais técnica, buscando entender JSON, os dados e realizar o tratamento deles.
+We plan to conduct a **statistical analysis** of the data, check **data types**, create **distribution graphs for binary or categorical data**, produce **Boxplots** to detect outliers, and build a **correlation matrix**. Through these analyses, we can identify relationships between data and our target, spot incoherent and/or unnecessary values, and deepen our understanding of the data.
 
-Todo o desenvolvimento feito na nossa 1° semana pode ser observado no [notebook semana 1](https://github.com/sthemonica/alura-voz/blob/main/1-Limpeza%20dos%20dados/limpeza.ipynb).
+All development and analysis from our second week can be found in the [week 2 notebook](https://github.com/sthemonica/alura-voz/blob/main/2-%20An%C3%A1lise%20dos%20dados/analise.ipynb).
 
-## Semana 2 - Análise dos dados
+## Week 3 - Machine Learning Models
 
-Feito o reconhecimento e tratamento de dados, demos continuidade do nosso trabalho, agora, analisando os dados. Em conversa com o grupo, conluímos que precisamos fazer uma análise gráfica para entender quais as variáveis que são relacionadas com o churn para que a equipe de vendas tenha uma noção do cenário atual, e também para que nós possamos entender de uma forma mais clara e formar possíveis hipóteses do que está acontecendo com os clientes.
+After discussing and reviewing all analyses from week 2, we concluded that a good option to minimize Alura Voz’s customer churn is to have a trained model that classifies customers as potential churn risks, enabling the sales team to act before they actually leave.
 
-Planejamos assim, fazer uma **análise estatística** dos dados, verificar os **tipos de dados** que temos, gerar gráficos de **distribuição de dados binários ou categóricos**, plot de **Boxplots** para detecção de outliers e **matriz de correlação**. Assim, de cada análise e verificação conseguimos identificar a relação dos dados com nosso alvo, identificar valores incoerêntes e/ou desnecessários e támbem entender ainda mais os dados que temos.
+Therefore, we began preparing the data to feed the models. Through our studies in week 2, we identified irrelevant input variables, non-numeric categorical data that models cannot interpret directly, and an imbalanced target variable. We processed these data points accordingly.
 
-Todo o desenvolvimento e análise feita na nossa 2° semana pode ser observado no [notebook semana 2](https://github.com/sthemonica/alura-voz/blob/main/2-%20An%C3%A1lise%20dos%20dados/analise.ipynb).
+The classification models we chose to address our problem are **SVC**, **Decision Tree**, and **Random Forest**. Since we couldn’t reach a consensus on which model would be best, we decided to develop and train all three models, so we could evaluate which one is most suitable in the final week.
 
-## Semana 3 - Modelos de Machine Learning
-
-Ao discutir e verificar todas as análises feitas na 2° semana, concluímos que uma boa opção para minimizar a evasão de clientes na Alura Voz é ter um modelo treinado que vai classificar clientes como potenciais pessoas a deixar a empresa e assim, a equipe de vendas pode agir antes que isso possa, de fato, ocorrer.
-
-Com isso, iniciamos a preparação de dados para serem enviados aos modelos. Pelos estudos da semana 2, nós já tinhamos identificado entradas desinteressantes para o aprendizado, dados categóricos não numéricos que seriam impossíveis de serem reconhecidos por um modelo matemático, além de termos o nosso alvo com valores desbalanceados. Esses dados logo foram tratados para se ajustarem ao modelo.
-
-Os modelos de classificação que definimos serem interessantes para solucionar nosso problema foram o **SVC**, **Decision Tree** e **Random Forest**. No entanto, não entramos em um consenso de qual modelo seria o melhor para o caso. Por isso, decidimos criar os 3 modelos e treiná-los, para que na nossa última semana pudessemos avaliar qual o mais interessante de ser utilizado.
-
-Todo o desenvolvimento e análise feita na nossa 3° semana pode ser observado no [notebook semana 3 dos modelos](https://github.com/sthemonica/alura-voz/blob/main/3-Modelos%20de%20ML/modelos.ipynb) e [notebook semana 3 para melhoria do melhor modelo](https://github.com/sthemonica/alura-voz/blob/main/4-Melhorando%20o%20modelo/otimizacao.ipynb).
+All development and analysis from our third week can be found in the [week 3 model notebook](https://github.com/sthemonica/alura-voz/blob/main/3-Modelos%20de%20ML/modelos.ipynb) and [notebook for model improvement](https://github.com/sthemonica/alura-voz/blob/main/4-Melhorando%20o%20modelo/otimizacao.ipynb).
 
 #alura #alurachallengedatascience1
 
-
-## Conheça a equipe
+## Meet the Team
 
 #### Sthefanie Monica
 
@@ -90,12 +85,11 @@ Todo o desenvolvimento e análise feita na nossa 3° semana pode ser observado n
 <img src="https://i.imgur.com/PPEmT1K.png" width="300px" />
 </div>
 
-
-Bacharela em Engenharia Elétrica pela UTFPR e atualmente instrutora de Data Science na Alura. Durante o período de graduação realizei diversas pesquisas voltadas à redes neurais e visão computacional, inclusive um período de pesquisa no Hospital Israelita Albert Einstein. No meu tempo livre adoro jogar, seja boardgames ou jogos eletrônicos, e amo conhecer novos lugares e pessoas, então estou sempre planejando a próxima viagem.
+Bachelor in Electrical Engineering from UTFPR, currently a Data Science instructor at Alura. During my undergraduate studies, I conducted research on neural networks and computer vision, including a research period at Hospital Israelita Albert Einstein. In my free time, I love playing games, both board games and video games, and I’m always planning my next trip.
 
 <div>
-<a href="https://www.linkedin.com/in/sthefanie-monica/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  
- 
+<a href="https://www.linkedin.com/in/sthefanie-monica/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+</div>
 
 #### Ana Clara
 
@@ -103,9 +97,9 @@ Bacharela em Engenharia Elétrica pela UTFPR e atualmente instrutora de Data Sci
 <img src="https://i.imgur.com/DAYE0yR.png" width="300px" />
 </div>
 
-Sou bacharela em Informática Biomédica e atualmente mestranda em Bioengenharia, ambas pela USP. Atuo como pesquisadora FAPESP e instrutora na Escola de Dados da Alura. Já realizei estágio no Hospital das Clínicas-FMRP, sou cofundadora e atual conselheira do grupo Data Girls. Possuo grande interesse na área de Ciência de Dados e Inteligência Artificial com aplicações em diferentes áreas de negócio. Além disso sou apaixonada por livros, séries, games e um bom café.
+Bachelor in Biomedical Informatics, currently pursuing a master’s in Bioengineering at USP. I work as a FAPESP researcher and instructor at Alura's Data School. I previously interned at the Hospital das Clínicas-FMRP, co-founded, and currently advise the Data Girls group. I am passionate about Data Science and AI applications in various fields. I also love books, series, games, and a good coffee.
 
-<a href="https://www.linkedin.com/in/anaclara-amioto/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  
+<a href="https://www.linkedin.com/in/anaclara-amioto/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
 #### Bruno Raphaell
 
@@ -113,11 +107,9 @@ Sou bacharela em Informática Biomédica e atualmente mestranda em Bioengenharia
 <img src="https://i.imgur.com/TpbGKvC.png" width="300px" />
 </div>
 
+Electrical Engineering student at UFPI and currently a Data Science scuba at Alura. Passionate about music, biographical films, and programming. In my free time, I try to rank up in League of Legends, play instruments, and watch movies and series.
 
-Estudante de engenharia elétrica na Universidade Federal do Piauí (UFPI) e atualmente scuba de Data Science na Alura. Apaixonado por música, filmes biográficos e programação. No tempo livre tento sair do prata no LoL, tocar algum instrumento e assistir filmes e séries.
-
-
-<a href="https://www.linkedin.com/in/bruno-raphaell-alves-de-matos/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
+<a href="https://www.linkedin.com/in/bruno-raphaell-alves-de-matos/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
 #### João Miranda
 
@@ -125,20 +117,16 @@ Estudante de engenharia elétrica na Universidade Federal do Piauí (UFPI) e atu
 <img src="https://i.imgur.com/6evW05p.png" width="300px" />
 </div>
 
+Bachelor in Mathematics from UFMG, currently pursuing an MBA in Data Science and Analytics at USP/Esalq. I am a monitor at Alura's Data School. I enjoy reading, playing electronic and board games, and archery.
 
-Bacharel em Matemática pela UFMG e cursando MBA em Data Science e Analytics na USP/Esalq. Atualmente sou monitor na Escola de Dados do grupo Alura. Gosta muito de livros, jogos eletrônicos, boardgames e tiro com arco.
+<a href="https://www.linkedin.com/in/joaovmiranda/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
-<a href="https://www.linkedin.com/in/joaovmiranda/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  
-
-
-#### Mirla Costa 
+#### Mirla Costa
 
 <div align="left">
 <img src="https://i.imgur.com/vrbN6ov.png" width="300px" />
 </div>
 
+Electrical Engineering student at UFPI with research focused on Machine Learning and Computational Intelligence. I work as a scuba in Alura's Data Science school. I love programming, teaching, and working with technology. In my free time, I enjoy playing with my pets, watching animations and series, and playing tabletop RPGs.
 
-Graduanda em Engenharia elétrica pela Universidade Federal do Piauí com pesquisa focada em Aprendizado de Máquina e Inteligência Computacional. Atuo como Scuba na escola de Data Science da Alura sempre amei muito programar, ensinar de trabalhar com tecnologia. Meu tempo livre dedico a brincar com meus animias, assistir animações e séries, além de jogar RPG de mesa.
-
-<a href="https://www.linkedin.com/in/mirla-costa/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
-</div>
+<a href="https://www.linkedin.com/in/mirla-costa/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
